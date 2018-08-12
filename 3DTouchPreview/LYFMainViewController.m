@@ -42,8 +42,9 @@
     cell.textLabel.text = [NSString stringWithFormat:@"这是第%li行", indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    /// 先判断3DTouch是否可用
     if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {// 3DTouch可用
-        // 注册协议
+        // 注册3DTouch协议
         [self registerForPreviewingWithDelegate:self sourceView:cell];
     } else{
         NSLog(@"3DTouch不可用");
